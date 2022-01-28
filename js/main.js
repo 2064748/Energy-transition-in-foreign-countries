@@ -76,7 +76,7 @@ $(document).ready(function () {
                         console.log('info gesloten');
 
                         openInfo.animate({
-                            top: originTop
+                            top: "-100%"
                         }, 300);
                     });
                 }
@@ -111,6 +111,7 @@ $(document).ready(function () {
                         event.preventDefault();
 
                         let direction = $(this).attr('id');
+                        let headerDot = $('.header-dots li');
 
                         if (direction == 'go') {
                             nummerContent = nummerContent + 1;
@@ -129,8 +130,37 @@ $(document).ready(function () {
                                 left: "+=100vw"
                             }, 200);
 
-                            console.log(direction + ' verder geluktt');
+                            console.log(direction);
 
+                            // $(headerDot).css('backgroundColor', "#004469");
+
+                            $('header-dots').ready(function () {
+                                if (nummerContent == 1) {
+                                    document.getElementById("dot1").style.backgroundColor = '#0000009f';
+                                    nummerContent == 0;
+                                    console.log('dot1-active');
+                                } if (nummerContent == 2) {
+                                    document.getElementById("dot2").style.backgroundColor = '#0000009f';
+                                    nummerContent == 1;
+                                    console.log('dot2-active');
+                                } if (nummerContent == 3) {
+                                    document.getElementById("dot3").style.backgroundColor = '#0000009f';
+                                    nummerContent == 2;
+                                    console.log('dot3-active');
+                                } if (nummerContent == 4) {
+                                    document.getElementById("dot4").style.backgroundColor = '#0000009f';
+                                    nummerContent == 3;
+                                    console.log('dot4-active');
+                                } if (nummerContent == 5) {
+                                    document.getElementById("dot5").style.backgroundColor = '#0000009f';
+                                    nummerContent == 4;
+                                    console.log('dot5-active');
+                                } if (nummerContent == 6) {
+                                    document.getElementById("dot6").style.backgroundColor = '#0000009f';
+                                    nummerContent == 5;
+                                    console.log('dot5-active');
+                                }
+                            });
 
                             if (nummerContent == 7) {
                                 nummerContent = 0;
@@ -151,6 +181,13 @@ $(document).ready(function () {
                                 $('.content-header').animate({
                                     left: "0"
                                 });
+
+                                document.getElementById("dot1").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot2").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot3").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot4").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot5").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot6").style.backgroundColor = '#1b1b1b41';
                             }
                         };
                         if (direction == 'no') {
@@ -171,7 +208,27 @@ $(document).ready(function () {
                             }, 200);
 
                             if (nummerContent == 0) {
+                                document.getElementById("dot1").style.backgroundColor = '#1b1b1b41';
+                            } if (nummerContent == 1) {
+                                document.getElementById("dot2").style.backgroundColor = '#1b1b1b41';
+                            } if (nummerContent == 2) {
+                                document.getElementById("dot3").style.backgroundColor = '#1b1b1b41';
+                            } if (nummerContent == 3) {
+                                document.getElementById("dot4").style.backgroundColor = '##1b1b1b41';
+                            } if (nummerContent == 4) {
+                                document.getElementById("dot5").style.backgroundColor = '#1b1b1b41';
+                            } if (nummerContent == 5) {
+                            }
+
+                            if (nummerContent == 0) {
                                 $("#no").css("display", "none");
+
+                                document.getElementById("dot1").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot2").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot3").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot4").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot5").style.backgroundColor = '#1b1b1b41';
+                                document.getElementById("dot6").style.backgroundColor = '#1b1b1b41';
                             }
                         };
                     });
@@ -207,7 +264,7 @@ $(document).ready(function () {
                         console.log('ok gesloten');
 
                         $('.open').animate({
-                            bottom: originBottom
+                            bottom: "-100%"
                         }, 200);
                     });
 
@@ -262,7 +319,32 @@ $(document).ready(function () {
                                         left: "0"
                                     });
                                     $("#prev").css("display", "none");
+
+                                    document.getElementById("cardot2").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot3").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot4").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot5").style.backgroundColor = '#1b1b1b41';
                                 }
+
+                                $('carousel-dots').ready(function () {
+                                    if (nummerCarousel == 1) {
+                                        document.getElementById("cardot2").style.backgroundColor = '#0000009f';
+                                        nummerCarousel == 0;
+                                        console.log('dot1-active');
+                                    } if (nummerCarousel == 2) {
+                                        document.getElementById("cardot3").style.backgroundColor = '#0000009f';
+                                        nummerCarousel == 1;
+                                        console.log('dot2-active');
+                                    } if (nummerCarousel == 3) {
+                                        document.getElementById("cardot4").style.backgroundColor = '#0000009f';
+                                        nummerCarousel == 2;
+                                        console.log('dot3-active');
+                                    } if (nummerCarousel == 4) {
+                                        document.getElementById("cardot5").style.backgroundColor = '#0000009f';
+                                        nummerCarousel == 3;
+                                        console.log('dot4-active');
+                                    }
+                                });
                             }
                             else if (direction == 'prev') {
                                 // console.log('prev active')
@@ -272,8 +354,23 @@ $(document).ready(function () {
                                 }, 50);
 
                                 if (nummerCarousel == 0) {
+                                    document.getElementById("cardot2").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCarousel == 1) {
+                                    document.getElementById("cardot3").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCarousel == 2) {
+                                    document.getElementById("cardot4").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCarousel == 3) {
+                                    document.getElementById("cardot5").style.backgroundColor = '#1b1b1b41';
+                                }
+
+                                if (nummerCarousel == 0) {
                                     nummerCarousel = 4;
                                     $("#prev").css("display", "none");
+
+                                    document.getElementById("cardot2").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot3").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot4").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cardot5").style.backgroundColor = '#1b1b1b41';
                                 }
                             }
                         })
@@ -306,7 +403,32 @@ $(document).ready(function () {
                                         left: "0"
                                     });
                                     $("#previous").css("display", "none");
+
+                                    document.getElementById("cldot2").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot3").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot4").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot5").style.backgroundColor = '#1b1b1b41';
                                 }
+
+                                $('close-dots').ready(function () {
+                                    if (nummerCloser == 1) {
+                                        document.getElementById("cldot2").style.backgroundColor = '#0000009f';
+                                        nummerCloser == 0;
+                                        console.log('dot1-active');
+                                    } if (nummerCloser == 2) {
+                                        document.getElementById("cldot3").style.backgroundColor = '#0000009f';
+                                        nummerCloser == 1;
+                                        console.log('dot2-active');
+                                    } if (nummerCloser == 3) {
+                                        document.getElementById("cldot4").style.backgroundColor = '#0000009f';
+                                        nummerCloser == 2;
+                                        console.log('dot3-active');
+                                    } if (nummerCloser == 4) {
+                                        document.getElementById("cldot5").style.backgroundColor = '#0000009f';
+                                        nummerCloser == 3;
+                                        console.log('dot4-active');
+                                    }
+                                });
                             }
                             else if (direction == 'previous') {
                                 // console.log('prev active')
@@ -316,8 +438,23 @@ $(document).ready(function () {
                                 }, 50);
 
                                 if (nummerCloser == 0) {
+                                    document.getElementById("cldot2").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCloser == 1) {
+                                    document.getElementById("cldot3").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCloser == 2) {
+                                    document.getElementById("cldot4").style.backgroundColor = '#1b1b1b41';
+                                } if (nummerCloser == 3) {
+                                    document.getElementById("cldot5").style.backgroundColor = '#1b1b1b41';
+                                }
+
+                                if (nummerCloser == 0) {
                                     nummerCloser = 4;
                                     $("#previous").css("display", "none");
+
+                                    document.getElementById("cldot2").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot3").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot4").style.backgroundColor = '#1b1b1b41';
+                                    document.getElementById("cldot5").style.backgroundColor = '#1b1b1b41';
                                 }
                             }
                         })
